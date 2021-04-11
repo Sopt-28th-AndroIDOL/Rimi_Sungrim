@@ -7,6 +7,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.be_sopt_seminar.databinding.ActivitySignInBinding
 
@@ -14,6 +15,12 @@ import com.example.be_sopt_seminar.databinding.ActivitySignInBinding
 class SignInActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignInBinding
+
+    private val signUpActivityLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) {
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,24 +47,7 @@ class SignInActivity : AppCompatActivity() {
     private fun signUpButtonClickEvent() {
         binding.signInTvSignup.setOnClickListener {
             val intent = Intent(this@SignInActivity, SignUpActivity::class.java)
-            startActivity(intent) // registerActivity로 리팩토링 예정
+            signUpActivityLauncher.launch(intent)
         }
-    }
-
-    override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
-        val focusView: View? = currentFocus
-        if (focusView != null) {
-            val rect = Rect()
-            focusView.getGlobalVisibleRect(rect)
-            val x = ev.x.toInt()
-            val y = ev.y.toInt()
-            if (!rect.contains(x, y)) {
-                val imm: InputMethodManager =
-                    getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                if (imm != null) imm.hideSoftInputFromWindow(focusView.getWindowToken(), 0)
-                focusView.clearFocus()
-            }
-        }
-        return super.dispatchTouchEvent(ev)
     }
 }

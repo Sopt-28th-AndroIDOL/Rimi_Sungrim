@@ -1,5 +1,6 @@
 package com.example.be_sopt_seminar
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Rect
 import androidx.appcompat.app.AppCompatActivity
@@ -33,25 +34,9 @@ class SignUpActivity : AppCompatActivity() {
                 intent.putExtra("userName", userName)
                 intent.putExtra("userId", userId)
                 intent.putExtra("userPw", userPw)
+                setResult(Activity.RESULT_OK, intent)
                 finish()
             }
         }
-    }
-
-    override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
-        val focusView: View? = currentFocus
-        if (focusView != null) {
-            val rect = Rect()
-            focusView.getGlobalVisibleRect(rect)
-            val x = ev.x.toInt()
-            val y = ev.y.toInt()
-            if (!rect.contains(x, y)) {
-                val imm: InputMethodManager =
-                    getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                if (imm != null) imm.hideSoftInputFromWindow(focusView.getWindowToken(), 0)
-                focusView.clearFocus()
-            }
-        }
-        return super.dispatchTouchEvent(ev)
     }
 }
