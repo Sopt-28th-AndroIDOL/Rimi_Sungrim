@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Rect
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -17,6 +18,7 @@ class SignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("SignUp Lifecycle", "onCreate()")
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
         signUpButtonClickEvent()
@@ -38,5 +40,30 @@ class SignUpActivity : AppCompatActivity() {
                 finish()
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("SignUp Lifecycle", "onStart()")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("SignUp Lifecycle", "onResume()")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("SignUp Lifecycle", "onPause()")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("SignUp Lifecycle", "onStop()")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("SignUp Lifecycle", "onDestroy()")
     }
 }

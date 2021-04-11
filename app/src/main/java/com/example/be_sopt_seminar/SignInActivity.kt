@@ -3,6 +3,7 @@ package com.example.be_sopt_seminar
 import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -24,6 +25,7 @@ class SignInActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("SignIn Lifecycle", "onCreate()")
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         loginButtonClickEvent()
@@ -49,5 +51,30 @@ class SignInActivity : AppCompatActivity() {
             val intent = Intent(this@SignInActivity, SignUpActivity::class.java)
             signUpActivityLauncher.launch(intent)
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("SignIn Lifecycle", "onStart()")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("SignIn Lifecycle", "onResume()")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("SignIn Lifecycle", "onPause()")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("SignIn Lifecycle", "onStop()")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("SignIn Lifecycle", "onDestroy()")
     }
 }
