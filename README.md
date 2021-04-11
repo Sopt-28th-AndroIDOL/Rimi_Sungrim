@@ -51,6 +51,6 @@ private fun signUpButtonClickEvent() {
 <img src="https://user-images.githubusercontent.com/72273531/114292890-c5f36280-9acc-11eb-807c-ae7dff3e1557.png" width="600" height="500">
 
 #### ③ 과제를 통해 배운 내용 및 개발자로서 성장한 내용 
-**Kotlin Extension**이 deprecated됨으로 인해 **ViewBinding** 사용  
-기존에 사용하던 ```startActivityForResult```가 deprecated됨으로 인해 새로운 ```registerForActivityResult```메소드 사용  
+1. **Kotlin Extension**이 deprecated됨으로 인해 **ViewBinding** 사용  
+2. 기존에 사용하던 ```startActivityForResult```가 deprecated됨으로 인해 새로운 ```registerForActivityResult```메소드 사용  
 
