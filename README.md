@@ -1,4 +1,5 @@
 # 💚SOPT_28th_Android💚  
+* [1차 세미나 과제](https://github.com/Sopt-28th-AndroIDOL/Rimi_Sungrim/blob/main/README.md#-%ED%95%84%EC%88%98-%EA%B3%BC%EC%A0%9C)
 
 ---
 ## 🤍1차 세미나 과제🤍  
