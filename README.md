@@ -112,7 +112,8 @@ class RepositoryAdapter : RecyclerView.Adapter<RepositoryAdapter.RepositoryViewH
     }
 }
 ```
-4. *RepositoryAdapter* 연결 및 데이터 갱신 & 5. MORE 버튼 추가 및 클릭 이벤트 생성
+4. *RepositoryAdapter* 연결 및 데이터 갱신 
+5. MORE 버튼 추가 및 클릭 이벤트 생성
 ```Kotlin
 class HomeActivity : AppCompatActivity() {
 
