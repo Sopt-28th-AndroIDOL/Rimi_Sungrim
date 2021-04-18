@@ -1,5 +1,6 @@
 # 💚SOPT_28th_Android💚  
 * [1차 세미나 과제](https://github.com/Sopt-28th-AndroIDOL/Rimi_Sungrim/blob/main/README.md#-%ED%95%84%EC%88%98-%EA%B3%BC%EC%A0%9C)
+* [2차 세미나 과제](https://github.com/Sopt-28th-AndroIDOL/Rimi_Sungrim/blob/main/README.md#-%ED%95%84%EC%88%98-%EA%B3%BC%EC%A0%9C)
 
 ---
 ## 🤍1차 세미나 과제🤍  
@@ -54,3 +55,97 @@ private fun signUpButtonClickEvent() {
 1. **Kotlin Extension**이 deprecated됨으로 인해 **ViewBinding** 사용  
 2. 기존에 사용하던 ```startActivityForResult```가 deprecated됨으로 인해 새로운 ```registerForActivityResult```메소드 사용  
 
+
+
+---
+## 🤍2차 세미나 과제🤍  
+### ✅ 필수 과제  
+### 📲 구현 화면
+<img src="https://user-images.githubusercontent.com/72273531/115159377-d196e880-a0cd-11eb-81ee-b6022910f86f.gif" width="230" height="500">  
+
+
+#### ① 구현 방법  
+1. 리사이클러뷰에 사용되는 *item_repository.xml* 생성  
+```Kotlin
+android:ellipsize="end" 
+android:maxLines="1" // 텍스트가 길어질 경우 한 줄까지만 표시하고 끝 부분에 말줄임표가 사용되도록 하는 속성
+```
+2. 데이터 클래스 *RepositoryInfo.kt* 생성  
+```Kotlin
+data class RepositoryInfo(
+    val repositoryName: String,
+    val repositoryDescription: String,
+    val repositoryLanguage: String
+)
+```
+3. *RepositoryAdapter* 와 *RepositoryViewHolder* 생성  
+```Kotlin
+class RepositoryAdapter : RecyclerView.Adapter<RepositoryAdapter.RepositoryViewHolder>() {
+
+    val repoList = mutableListOf<RepositoryInfo>()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryAdapter.RepositoryViewHolder {
+        val binding = ItemRepositoryBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return RepositoryAdapter.RepositoryViewHolder(
+            binding
+        )
+    }
+
+    override fun getItemCount(): Int  = repoList.size
+
+    override fun onBindViewHolder(holder: RepositoryViewHolder, position: Int) {
+        holder.onBind(repoList[position])
+    }
+
+    class RepositoryViewHolder(
+        private val binding: ItemRepositoryBinding
+        ) : RecyclerView.ViewHolder(binding.root) {
+        fun onBind(repositoryInfo: RepositoryInfo){
+            binding.homeRepoName.text = repositoryInfo.repositoryName
+            binding.homeRepoDescription.text = repositoryInfo.repositoryDescription
+            binding.homeRepoLanguage.text = repositoryInfo.repositoryLanguage
+        }
+    }
+}
+```
+4. *RepositoryAdapter* 연결 및 데이터 갱신 & 5. MORE 버튼 추가 및 클릭 이벤트 생성
+```
+class HomeActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityHomeBinding
+
+    private lateinit var repositoryAdapter: RepositoryAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        moreButtonClickEvent()
+
+        repositoryAdapter = RepositoryAdapter()
+        binding.homeRcv.adapter = repositoryAdapter
+        repositoryAdapter.repoList.addAll(
+            listOf<RepositoryInfo>(
+                RepositoryInfo(
+                    repositoryName = "Rimi_Sungrim",
+                    repositoryDescription = "성림",
+                    repositoryLanguage = "Kotlin"
+                ),
+                //생략
+            )
+        )
+        repositoryAdapter.notifyDataSetChanged()
+    }
+
+    private fun moreButtonClickEvent() {
+        binding.homeClMoreBtn.setOnClickListener {
+            val intent = Intent(this@HomeActivity, UserInfoActivity::class.java)
+            startActivity(intent)
+        }
+    }
+}
+```
