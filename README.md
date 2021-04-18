@@ -1,6 +1,6 @@
 # 💚SOPT_28th_Android💚  
 * [1차 세미나 과제](https://github.com/Sopt-28th-AndroIDOL/Rimi_Sungrim/blob/main/README.md#-%ED%95%84%EC%88%98-%EA%B3%BC%EC%A0%9C)
-* [2차 세미나 과제](https://github.com/Sopt-28th-AndroIDOL/Rimi_Sungrim/blob/main/README.md#-%ED%95%84%EC%88%98-%EA%B3%BC%EC%A0%9C)
+* [2차 세미나 과제](https://github.com/Sopt-28th-AndroIDOL/Rimi_Sungrim/blob/main/README.md#2%EC%B0%A8-%EC%84%B8%EB%AF%B8%EB%82%98-%EA%B3%BC%EC%A0%9C)
 
 ---
 ## 🤍1차 세미나 과제🤍  
@@ -113,7 +113,7 @@ class RepositoryAdapter : RecyclerView.Adapter<RepositoryAdapter.RepositoryViewH
 }
 ```
 4. *RepositoryAdapter* 연결 및 데이터 갱신 & 5. MORE 버튼 추가 및 클릭 이벤트 생성
-```
+```Kotlin
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
