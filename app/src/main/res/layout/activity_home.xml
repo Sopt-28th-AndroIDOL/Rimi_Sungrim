@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".presentation.HomeActivity">
 
     <ScrollView
         android:id="@+id/home_sv"
         android:layout_width="0dp"
         android:layout_height="300dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,6 +61,30 @@
                 android:text="💖❤💚💙💛💜\n🐼🐨🐱🐥🐧🍌\n🌴🐰👑🍑🌙🐍🌼\n🐻🐥🦊🐰🐶\n🐰🐶🐻🐹🦄🐧🐷🐯🦌\n🐺🐰🐖🐇🐭🐿🐥🐶🦊\n🖤💚💙💖🧡❤🖤💙🧡"
                 app:layout_constraintTop_toBottomOf="@id/home_cl_name"
                 app:layout_constraintStart_toStartOf="@id/home_cl_name"/>
+
+            <Button
+                android:id="@+id/home_cl_more_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MORE"
+                app:layout_constraintBottom_toBottomOf="@id/home_cl"
+                app:layout_constraintEnd_toEndOf="@id/home_cl"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_rcv"
+        tools:listitem="@layout/item_repository"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_sv" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
