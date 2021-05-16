@@ -1,10 +1,11 @@
-package com.example.be_sopt_seminar.presentation
+package com.example.be_sopt_seminar.presentation.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.be_sopt_seminar.data.RepositoryInfo
 import com.example.be_sopt_seminar.databinding.ActivityHomeBinding
+import com.example.be_sopt_seminar.presentation.home.userInfo.UserInfoActivity
 
 class HomeActivity : AppCompatActivity() {
 

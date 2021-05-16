@@ -1,4 +1,4 @@
-package com.example.be_sopt_seminar.presentation
+package com.example.be_sopt_seminar.presentation.home.userInfo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

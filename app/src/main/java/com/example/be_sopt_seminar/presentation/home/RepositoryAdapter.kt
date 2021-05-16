@@ -1,24 +1,22 @@
-package com.example.be_sopt_seminar.presentation
+package com.example.be_sopt_seminar.presentation.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.be_sopt_seminar.data.FollowingUserInfo
 import com.example.be_sopt_seminar.data.RepositoryInfo
-import com.example.be_sopt_seminar.databinding.ItemFollowingUserBinding
 import com.example.be_sopt_seminar.databinding.ItemRepositoryBinding
 
 class RepositoryAdapter : RecyclerView.Adapter<RepositoryAdapter.RepositoryViewHolder>() {
 
     val repoList = mutableListOf<RepositoryInfo>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryAdapter.RepositoryViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryViewHolder {
         val binding = ItemRepositoryBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return RepositoryAdapter.RepositoryViewHolder(
+        return RepositoryViewHolder(
             binding
         )
     }

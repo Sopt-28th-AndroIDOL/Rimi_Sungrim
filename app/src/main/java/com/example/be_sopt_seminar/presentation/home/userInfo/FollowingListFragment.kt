@@ -1,4 +1,4 @@
-package com.example.be_sopt_seminar.presentation
+package com.example.be_sopt_seminar.presentation.home.userInfo
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.be_sopt_seminar.data.FollowingUserInfo
 import com.example.be_sopt_seminar.databinding.FragmentFollowingListBinding
+import com.example.be_sopt_seminar.presentation.home.userInfo.FollowingListAdapter
 
 class FollowingListFragment : Fragment() {
 
