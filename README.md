@@ -156,12 +156,12 @@ class HomeActivity : AppCompatActivity() {
 ## 🤍4차 세미나 과제🤍  
 ### ✅ 필수 과제  
 ### 📲 구현 화면
-##### 회원가입
+##### 📌회원가입
 <img src="https://user-images.githubusercontent.com/72273531/118396343-12acf900-b68a-11eb-9335-a78ed6232bc5.png" width="900" height="500">  
 <img src="https://user-images.githubusercontent.com/72273531/118396405-64ee1a00-b68a-11eb-8072-9e87ef5a6f75.png" width="900" height="500">  
 <img src="https://user-images.githubusercontent.com/72273531/118396421-72a39f80-b68a-11eb-939a-11580596c26e.gif" width="230" height="500">  
 
-##### 로그인
+##### 📌로그인
 <img src="https://user-images.githubusercontent.com/72273531/118396435-7f27f800-b68a-11eb-8754-b2804e86f14b.png" width="900" height="500">  
 <img src="https://user-images.githubusercontent.com/72273531/118396458-97981280-b68a-11eb-83d2-5fb369773463.gif" width="230" height="500">  
 
@@ -203,6 +203,7 @@ data class ResponseSignUpData(
 }
 ```
 ```Kotlin
+//로그인
 data class RequestLoginData(
     @SerializedName("email")
     val id: String,
